@@ -1,0 +1,36 @@
+packege.json traz informções relacionada ao core do nosso projeto
+
+npm install express => microframework, facilita escrever coisas que são comuns em aplicações back, rotas, etc...
+
+packege-lock.json => para o npm ter uma refêrencia mais rapida para as dependencias, para na hora de instalas, instalar as coisas mais rápida
+
+no packege.json trocamos o caminho do mais que estava index.js para o nosso server, src/server.js
+
+ECMAScript modules =>  para importações, no packege.json temos que passar o "type":"module" e trocar o nome do arquivo para .mjs
+
+ferramentas para testar rotas, isomnia, postman e o hoppscotch
+
+recomendado estudar typescript, ele adiciona a parte de tipagem estatica é uma forma de evitar erros na produção, em backgorund ele vai testando nosso código 'typescript is javascript with syntax for types', 
+o node ele não entende typescript nativamente, usaremos só em desenvolvimento, quando colocarmos em produção o código vai estar em javascript
+instalar typescript como uma ferramenta só de desenvolvimento // npm i typescript -D
+
+e mudamos a extensão do server.mjs pra server.ts no final das contas
+
+se formos executar o códgio src/server.ts vai dar erro por que o node não entende typescript, então temos que converter
+na sessão script criamos um script chamado "build":"tsc", 
+criamos um arquivo de concifuração do typescript npx é para executar alguma biblioteca 
+// npx tsc --init  para inicializar
+ai rodamos a aplicação 
+// npm run build
+
+O que é tipagem estatica?
+a tipagem estatica permite definir o formato dque esperamos de cada informação
+
+o nosso arquivo server.ts estava dando erro na importação do express,
+descomentamos no tsconfig o moduleResolution e,
+o express não tem 'suporte' a typescript então fizemos o seguinte comando no terminal
+// npm i @types/express -D
+
+para facilitar o processo de ficar atualizando o servidor sem precisar para de rodar e rodar de novo
+vamos instalar uma ferramenta
+// npm i ts-node-dev -D
